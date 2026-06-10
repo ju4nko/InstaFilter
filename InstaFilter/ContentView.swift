@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 import CoreImage
 import CoreImage.CIFilterBuiltins
+import StoreKit
 
 struct ContentView: View {
     @State private var processedImage: Image?
@@ -82,7 +83,9 @@ struct ContentView: View {
                     Text("Intensity")
                     Slider(value: $filterIntensity)
                         .onChange(of: filterIntensity, applyProcessing)
-                }.padding(.vertical)
+                        
+                }
+                .padding(.vertical)
                 HStack {
                     Button("Change filter", action: changeFilters)
                     Spacer()
